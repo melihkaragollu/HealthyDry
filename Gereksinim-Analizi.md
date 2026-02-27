@@ -1,36 +1,75 @@
-# Gereksinim Analizi
+1. Üye Kaydı Yapma
+   API Metodu: POST /auth/register
 
-Tüm gereksinimlerinizi çıkardıktan sonra beraber tartışıyoruz ve son gereksinimlerin isimlerini hangi API metoduna karşılık geleceğini ve kısa açıklamalarını buraya numaralı bir şekilde yazıyorsunuz. Daha sonra aşağıya herkes kendi gereksinimiyle ilgili sayfayı oluşturmalı ve kendi sayfasında kendine ait gereksinimleri numaralı bir şekilde listeleyerek her bir gereksinimin açıklamalarını yazmalı. Toplamda grup üyesi sayısı kadar sayfa oluşturulmalı. Her grup üyesine eşit sayıda gereksinim atanmalı.
 
-## Gereksinim Sayıları (En Az)
 
-- **1 Kişi:** 10 gereksinim
-- **2 Kişi:** 16 gereksinim
-- **3 Kişi:** 21 gereksinim
-- **4 Kişi:** 24 gereksinim
-- **5 Kişi:** 30 gereksinim
+Açıklama: Sisteme yeni kullanıcıların isim, e-posta ve şifre belirleyerek yeni bir hesap oluşturmasını sağlar.
 
-## Gereksinimlerde Uyulması Gereken Kurallar
 
-1. **İsimler anlamlı olmalı:** Gereksinim isimleri net ve anlaşılır olmalıdır.
-2. **Açıklamalar net olmalı:** Her gereksinimin açıklaması açık ve anlaşılır şekilde yazılmalıdır.
-3. **Açıklamalar teknik jargon ve kısaltmalar içermemeli:** Gereksinim açıklamaları herkesin anlayabileceği basit bir dille yazılmalıdır.
-4. **Gereksinim isimleri çok uzun olmamalı ve bir eylem bildirmeli:** 
-   - İsimler kısa ve öz olmalıdır
-   - Bir eylem fiili içermelidir
-   - Örnekler: "Kayıt Olma", "Giriş Yapma", "Profil Güncelleme", "Hesap Silme"
+2. Meyve Listeleme
+   API Metodu: GET /products
 
-# Tüm Gereksinimler 
 
-1. **Giriş Yapma** (Ali Tutar)
-2. **Üye Olma** (Ali Tutar)
-3. ..
-4. ..
-# Gereksinim Dağılımları
 
-1. [Ali Tutar'ın Gereksinimleri](Ali-Tutar/Ali-Tutar-Gereksinimler.md)
-2. [Grup Üyesi 2'nin Gereksinimleri](Grup-Uyesi-2/Grup-Uyesi-2-Gereksinimler.md)
-3. [Grup Üyesi 3'ün Gereksinimleri](Grup-Uyesi-3/Grup-Uyesi-3-Gereksinimler.md)
-4. [Grup Üyesi 4'ün Gereksinimleri](Grup-Uyesi-4/Grup-Uyesi-4-Gereksinimler.md)
-5. [Grup Üyesi 5'in Gereksinimleri](Grup-Uyesi-5/Grup-Uyesi-5-Gereksinimler.md)
-6. [Grup Üyesi 6'nın Gereksinimleri](Grup-Uyesi-6/Grup-Uyesi-6-Gereksinimler.md)
+Açıklama: Satışta olan tüm kurutulmuş meyve çeşitlerinin, görselleri ve fiyatlarıyla birlikte ana sayfada görüntülenmesini sağlar.
+
+
+3. Profil Güncelleme
+   API Metodu: PUT /users/profile
+
+
+
+Açıklama: Kullanıcıların kayıtlı teslimat adresi, telefon ve iletişim bilgilerini istedikleri zaman değiştirmesine olanak tanır.
+
+4. Siparişi İptal Etme
+   API Metodu: DELETE /orders/{orderId}
+
+
+
+Açıklama: Henüz kargoya verilmemiş olan hatalı veya vazgeçilen bir siparişin sistemden tamamen kaldırılmasını sağlar.
+
+5. Yeni Ürün Tanımlama
+   API Metodu: POST /admin/products
+
+
+
+Açıklama: Yönetici panelinden sisteme yeni bir kurutulmuş meyve türü, stok miktarı ve ürün açıklaması girilmesini sağlar.
+
+6. Sepet Görüntüleme
+   API Metodu: GET /cart
+
+
+
+Açıklama: Kullanıcının satın almak üzere sepetine eklediği ürünlerin güncel listesini ve ödenecek toplam tutarı görmesini sağlar.
+
+
+7. Ürün Fiyatı Güncelleme
+   API Metodu: PUT /admin/products/{productId}
+
+
+
+Açıklama: Stok durumuna veya kampanya dönemlerine göre seçilen ürünün birim satış fiyatının değiştirilmesini sağlar.
+
+
+8. Ürünü Sepetten Çıkarma
+   API Metodu: DELETE /cart/{itemId}
+
+
+
+Açıklama: Satın alınmaktan vazgeçilen bir ürünün sepet listesinden kalıcı olarak silinmesini sağlar.
+
+
+9. Sipariş Geçmişi Listeleme
+   API Metodu: GET /orders/history
+
+
+
+Açıklama: Kullanıcının daha önce tamamladığı tüm alışverişlerin detaylarını, tarihlerini ve fatura bilgilerini görüntülemesini sağlar.
+
+10. AI Destekli Akıllı Tadım Asistanı
+    API Metodu: POST /ai/recommendations
+
+
+
+Açıklama: Kullanıcının damak tadı tercihlerine (tatlı, ekşi, kıtır vb.) göre en uygun kurutulmuş meyve karışımını öneren yapay zeka desteği sağlar.
+
